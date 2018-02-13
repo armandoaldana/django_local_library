@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+<li><a href="{% url 'index' %}">Pagina Principal</a></li>
+
+{% block content %}
+<h1>Pagina Principal Libreria Local </h1>
+
+  <p>Bienvenido a <em>Libreria Local</em>, Un sitio WEB basico desarrollado en Django como ejemplo de tutorail Mozilla Developer Network.</p>
+
+<h2>Inventario</h2>
+
+  <p>La libreria tiene el siguiente contenido:</p>
+  <ul>
+    <li><strong>Libros:</strong> {{ num_books }}</li>
+    <li><strong>Copias libros:</strong> {{ num_instances }}</li>
+    <li><strong>Copias libros disponibles:</strong> {{ num_instances_available }}</li>
+    <li><strong>Autores:</strong> {{ num_authors }}</li>
+    <li><strong>Generos:</strong> {{ num_genres }}</li>
+    <li><strong>Libros con la palabra EL:</strong> {{ num_libros_palabra_el }}</li>
+  </ul>
+
+  <p>Usted ha vistado esta pagina: {{ num_visits }}{% if num_visits == 1 %} vez{% else %} veces{% endif %}.</p>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Autor: {{ author.first_name }}, {{ author.last_name }}</h1>
+
+  <p>{{ author.date_of_birth }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4><font size=6, color="green">Libros</font></h4>
+
+    {% for copy in author.book_set.all %}
+		<p><font size=4, color="teal">{{copy.title}}</font></p>
+		<p class="text-muted">{{copy.summary}}</p>
+    {% endfor %}
+	
+  </div>
+  
+{% endblock %}
